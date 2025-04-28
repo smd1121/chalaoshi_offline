@@ -21,6 +21,7 @@
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^6.8.1",
     "csv-loader": "^3.0.5",
+    "html-inline-script-webpack-plugin": "^3.2.1",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "vue-loader": "^17.3.1",

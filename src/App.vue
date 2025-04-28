@@ -24,19 +24,20 @@
         </div>
       </div>
     </nav>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { searchTeachers } from './utils/search'
 
 export default {
   name: 'App',
   setup() {
     const router = useRouter()
+    const route = useRoute()
     const searchQuery = ref('')
     const searchResults = ref([])
 
@@ -77,14 +78,42 @@ export default {
   overflow-y: auto;
   z-index: 1000;
   margin-top: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .search-result-item {
-  padding: 8px 16px;
+  padding: 12px 16px;
   cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
 }
 
 .search-result-item:hover {
   background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    max-height: 200px;
+  }
+  
+  .search-result-item {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .form-control {
+    font-size: 16px;
+    height: 40px;
+  }
 }
 </style> 

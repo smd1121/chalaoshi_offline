@@ -1,3 +1,11 @@
+背景：https://github.com/zjuchalaoshi/chalaoshi/issues/89
+
+本项目由 cursor 生成，未经充分测试。
+
+---
+
+以下为 AI 生成：
+
 # 查老师 - 离线版
 
 这是一个离线版本的查老师应用，数据来源于 [查老师项目](https://github.com/zjuchalaoshi/chalaoshi)。
@@ -42,29 +50,4 @@ npm run build
 
 ## 数据格式说明
 
-### teachers.csv
-
-包含标题行，格式为：
-```
-id,姓名,学院,热度,评分人数,评分,拼音,拼音缩写
-```
-
-### gpa.json
-
-格式为：
-```json
-{
-  "教师姓名": [
-    ["课程名称", "GPA", "人数", "标准差"],
-    ...
-  ],
-  ...
-}
-```
-
-### comment_{学院}.csv
-
-包含标题行，格式为：
-```
-评论id,老师id,老师姓名,发表时间,点赞减去点踩数量,点赞量,点踩量,内容
-``` 
+将来自 https://github.com/zjuchalaoshi/chalaoshi/issues/89 的数据放在 chalaoshi_data 目录下即可触发构建。

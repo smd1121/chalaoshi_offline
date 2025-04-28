@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import Teacher from './views/Teacher.vue'
 import Course from './views/Course.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './assets/global.css'
 
 const router = createRouter({
   history: createWebHashHistory(),
