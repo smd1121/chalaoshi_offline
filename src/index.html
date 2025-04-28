@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查老师 - 离线版</title>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">查老师</a>
+                <div class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="搜索教师姓名/拼音/拼音缩写" v-model="searchQuery" @input="handleSearch">
+                    <div class="search-results" v-if="searchResults.length > 0">
+                        <div v-for="teacher in searchResults" :key="teacher.id" class="search-result-item" @click="goToTeacher(teacher.id)">
+                            {{ teacher.name }} - {{ teacher.college }} ({{ teacher.rating }})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>随机推荐</h2>
+                    <div class="row">
+                        <div v-for="teacher in randomTeachers" :key="teacher.id" class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ teacher.name }}</h5>
+                                    <p class="card-text">
+                                        学院：{{ teacher.college }}<br>
+                                        评分：{{ teacher.rating }} ({{ teacher.ratingCount }}人评分)
+                                    </p>
+                                    <a :href="'/t/' + teacher.id" class="btn btn-primary">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">关于</h5>
+                            <p class="card-text">
+                                这是一个离线版本的查老师应用，数据来源于 <a href="https://github.com/zjuchalaoshi/chalaoshi" target="_blank">查老师项目</a>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

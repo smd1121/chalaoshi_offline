@@ -1,0 +1,6 @@
+**/chalaoshi_data/*
+!**/chalaoshi_data/.gitkeep
+node_modules
+.DS_Store
+public
+
